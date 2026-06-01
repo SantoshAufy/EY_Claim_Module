@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Etihad IMS Claim Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-main">ETIHAD</div>
+        <div class="brand-sub">AIRWAYS</div>
+      </div>
+      <nav class="nav">
+        <button class="nav-item active" data-screen="dashboard"><span class="ico">⌂</span><span>Dashboard</span></button>
+        <button class="nav-item" data-screen="claims"><span class="ico">▣</span><span>My Claims</span></button>
+        <button class="nav-item" data-screen="raise"><span class="ico">＋</span><span>Raise Claim</span></button>
+        <button class="nav-item" data-screen="documents"><span class="ico">□</span><span>Documents</span></button>
+        <button class="nav-item" data-screen="notifications"><span class="ico">♧</span><span>Notifications</span></button>
+        <button class="nav-item" data-screen="help"><span class="ico">?</span><span>Help & Support</span></button>
+      </nav>
+      <div class="plane-art">
+        <div class="plane-line"></div>
+        <div class="plane">✈</div>
+        <div class="tail"></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="pageTitle">Life Insurance Claim Portal</h1>
+          <p id="pageSub">Track your insurance claims and complete pending actions.</p>
+        </div>
+        <div class="top-actions">
+          <div class="avatar">●</div>
+          <strong id="userName">John Doe</strong>
+          <span class="chev">⌄</span>
+        </div>
+      </header>
+
+      <section id="dashboard" class="screen active">
+        <div class="welcome-row">
+          <div>
+            <h2>Welcome, <span>John Doe</span></h2>
+            <p>Track your insurance claims and complete pending actions.</p>
+          </div>
+          <button class="primary-btn" data-screen="raise"><span>＋</span> Raise New Claim</button>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric"><span class="badge gold">▤</span><div><b>Total Claims</b><strong>2</strong><p>All time</p></div></article>
+          <article class="metric"><span class="badge blue">⌛</span><div><b>In Progress</b><strong>1</strong><p>Requires your attention</p></div></article>
+          <article class="metric"><span class="badge red">▧</span><div><b>Pending Documents</b><strong>1</strong><p>Action required</p></div></article>
+          <article class="metric"><span class="badge green">✓</span><div><b>Approved / Settled</b><strong>1</strong><p>All time</p></div></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel active-claim">
+            <div class="panel-head"><h3>Your Active Claim</h3><span class="pill amber">In Progress</span></div>
+            <div class="claim-id">
+              <span class="badge gold small">▤</span>
+              <div><p>Claim Reference No.</p><strong>LIFE-2025-000123</strong></div>
+            </div>
+            <div class="two-col">
+              <div><label>Claim Type</label><b>Temporary Total Disablement (TTD)</b></div>
+              <div><label>Date of Loss</label><b>05 May 2025</b></div>
+            </div>
+            <h4>Claim Progress</h4>
+            <div class="steps">
+              <span class="done">✓<b>Submitted</b><em>05 May 2025</em></span>
+              <span class="active">▤<b>IMS Review</b><em>16 May 2025</em></span>
+              <span>♢<b>Insurer Review</b></span>
+              <span>✓<b>Approved</b></span>
+              <span>□<b>Closed</b></span>
+            </div>
+            <div class="button-row">
+              <button class="primary-btn compact">◎ View Claim Details</button>
+              <button class="outline-btn compact">⇧ Upload Documents</button>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head"><h3>Pending Actions</h3><a>View all -></a></div>
+            <div class="action-list">
+              <div><span class="badge red small">▧</span><div><b>Upload Medical Report</b><p>Requested by IMS on 15 May 2025</p></div><i>›</i></div>
+              <div><span class="badge gold small">▤</span><div><b>Complete Declaration</b><p>Declaration is pending</p></div><i>›</i></div>
+              <div><span class="badge blue small">▧</span><div><b>Upload Salary Slips</b><p>Last 12 months required</p></div><i>›</i></div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head"><h3>Recent Activity</h3><a>View all -></a></div>
+            <ol class="timeline">
+              <li class="now"><b>16 May 2025, 10:30 AM</b><p>Your claim LIFE-2025-000123 is under IMS review.</p></li>
+              <li><b>15 May 2025, 04:15 PM</b><p>Additional document requested: Medical Report.</p></li>
+              <li><b>14 May 2025, 11:20 AM</b><p>Documents uploaded for claim LIFE-2025-000123.</p></li>
+              <li><b>05 May 2025, 09:45 AM</b><p>Claim LIFE-2025-000123 submitted successfully.</p></li>
+            </ol>
+          </article>
+
+          <article class="panel docs-panel">
+            <div class="panel-head"><h3>Documents & Forms</h3><a>View all -></a></div>
+            <div class="download-list"></div>
+          </article>
+
+          <article class="panel faq-panel">
+            <div class="panel-head"><h3>FAQs</h3><a>View all -></a></div>
+            <details><summary>How do I raise a claim?</summary><p>Select Raise Claim and complete the data capture form.</p></details>
+            <details><summary>What documents are required for my claim?</summary><p>The right panel lists mandatory documents for each policy type.</p></details>
+            <details><summary>How long does the approval process take?</summary><p>Processing depends on document completion and insurer review.</p></details>
+            <details><summary>How do I upload additional documents?</summary><p>Use Upload Documents or Add New Document Type.</p></details>
+            <details><summary>What is IMS review?</summary><p>IMS verifies the claim details before insurer review.</p></details>
+            <div class="search">⌕ <span>Search FAQs...</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="critical" class="screen claim-screen" data-type="critical"></section>
+      <section id="life" class="screen claim-screen" data-type="life"></section>
+      <section id="pa" class="screen claim-screen" data-type="pa"></section>
+      <section id="pip" class="screen claim-screen" data-type="pip"></section>
+
+      <section id="claims" class="screen placeholder"><h2>My Claims</h2><p>Use the claim type switcher in the prototype to open each detailed capture screen.</p></section>
+      <section id="raise" class="screen placeholder"><h2>Raise Claim</h2><p>Select a claim type to open the matching data capture form.</p></section>
+      <section id="documents" class="screen placeholder"><h2>Documents</h2><p>Document templates and uploaded files follow the same shared layout.</p></section>
+      <section id="notifications" class="screen placeholder"><h2>Notifications</h2><p>Claim alerts, review updates, and pending actions appear here.</p></section>
+      <section id="help" class="screen placeholder"><h2>Help & Support</h2><p>FAQs and contact assistance are available here.</p></section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
